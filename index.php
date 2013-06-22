@@ -216,7 +216,7 @@ date_default_timezone_set('Europe/Madrid');
         $$.ajax({
             type: 'GET', // defaults to 'GET'
             url: url_insertarToma,
-            data: {id: id},
+            data: {id: '2'},
             dataType: 'text', //'json', 'xml', 'html', or 'text'
             async: true,
             success: function(response) { alert('ok'); },

@@ -41,15 +41,6 @@ date_default_timezone_set('Europe/Madrid');
                 <li class="anchor">
                     Tomas periódicas
                 </li>
-                <?php
-                    $connection = Database::Connect();
-                    $query = "SELECT pastilla.nombre FROM pastilla WHERE pastilla.usuarioid = 4 AND pastilla.tipoid=2";
-                    $cursor = Database::Reader($query, $connection);
-                    while ($row = Database::Read($cursor))
-                    {
-                        //echo "<li><strong>".$row['nombre']."</strong></li>";
-                    } 
-               ?>
                 <li class="anchor">
                     Últimas tomas
                 </li>

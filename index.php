@@ -5,8 +5,8 @@ include "inc/class.database.php";
 
 date_default_timezone_set('Europe/Madrid');
 $inicio = 6;
-$final = date("m");
-echo $final;
+$final = date("n");
+$meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 ?>
 <html>
 <head>
@@ -76,35 +76,44 @@ echo $final;
             <a id="insertar_button" href="#" class="button anchor" data-label="Insertar Toma"></a>
         </form>        
         </article>
-
+<?php
+    for($j=$inicio;$j<=$final; $j++)
+    {
+?>
         <article id="months-article" class="list scroll">
             <ul>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
+                <li class="arrow"><a href="#days-article" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
             </ul>
         </article>
-
+<?php
+    }
+    for($j=$inicio;$j<=$final; $j++)
+    {
+?>
         <article id="days-article" class="list scroll">
             <ul id="days-list">
-                <li class="anchor">Junio de 2013</li>
+                <li class="anchor"><?php echo $meses[$j-1]; ?> de 2013</li>
             <?php
                 $start=date("d");
                 for($i=$start;$i>=1;$i--)
                 {
-                    echo "<li class=\"arrow\"><a href=\"#items-article-20136$i\" data-router=\"article\"><strong>$i</strong></a></li>";
+                    echo "<li class=\"arrow\"><a href=\"#items-article-2013$j$i\" data-router=\"article\"><strong>$i</strong></a></li>";
                 }
             ?>
             </ul>
         </article>
 
         <?php
+
             for($i=1;$i<31;$i++)
             {
-                echo  "<article id=\"items-article-20136$i\" class=\"list scroll\"><ul>
-                    <li class=\"anchor\">$i de Junio de 2013</li>
-                    <div id=\"items-tomas-day-20136$i\">
+                echo  "<article id=\"items-article-2013$j$i\" class=\"list scroll\"><ul>
+                    <li class=\"anchor\">$i de ".$meses[$j-1]." de 2013</li>
+                    <div id=\"items-tomas-day-2013$j$i\">
                     </div>
                 </ul></article>";
             }
+    }
         ?>
     </section>
 
@@ -150,6 +159,7 @@ echo $final;
                                 template="{{#pastillas}}\
                                             <li id='{{pastillaid}}'>\
                                                 <strong>{{nombre}}</strong>\
+                                                <a href='#' class='button small rigth'>small</a>\
                                             </li>\{{/pastillas}}";
 
                                 html=Mustache.render(template,obj);

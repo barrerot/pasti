@@ -158,9 +158,9 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                                 obj=api;
                                 template="{{#pastillas}}\
                                             <li id='{{pastillaid}}'>\
-                                                <div class='float:left'><strong>{{nombre}}</strong></div>\
-                                                <div><a href='#' class='button small rigth'>small</a></div>\
-                                            </li>\{{/pastillas}}";
+                                                <strong>{{nombre}}</strong>\
+                                            </li>\
+                                            {{/pastillas}}";
 
                                 html=Mustache.render(template,obj);
                                 $$('#tratamiento-list').append(html); //Aqui es donde se 'pintaría' los datos que estamos consumiendo en JSON

@@ -204,7 +204,7 @@ date_default_timezone_set('Europe/Madrid');
 
         $$('#insertar_button').tap(function(event) { 
  
-        var url = url_insertarToma;
+        //var url = url_insertarToma;
         var id=$$('#pastilla_select').val();
         var data = {
             id: $$('#pastilla_select').val()
@@ -212,6 +212,16 @@ date_default_timezone_set('Europe/Madrid');
 
         alert('');
         alert(id);
+
+        $$.ajax({
+            type: 'GET', // defaults to 'GET'
+            url: url_insertarToma,
+            data: {id: id},
+            dataType: 'text', //'json', 'xml', 'html', or 'text'
+            async: true,
+            success: function(response) { alert('ok'); },
+            error: function(xhr, type) { alert('ko'); }
+        });
 /*
         Lungo.Service.post(url, data, function(response) {
             alert(response);

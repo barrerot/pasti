@@ -158,8 +158,8 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                                 obj=api;
                                 template="{{#pastillas}}\
                                             <li id='{{pastillaid}}'>\
-                                                <strong>{{nombre}}</strong>\
-                                                <a href='#' class='button small rigth'>small</a>\
+                                                <div class='float:left'><strong>{{nombre}}</strong></div>\
+                                                <div><a href='#' class='button small rigth'>small</a></div>\
                                             </li>\{{/pastillas}}";
 
                                 html=Mustache.render(template,obj);

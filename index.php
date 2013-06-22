@@ -216,7 +216,7 @@ date_default_timezone_set('Europe/Madrid');
             data: {pid: id},
             dataType: 'text', //'json', 'xml', 'html', or 'text'
             async: true,
-            success: function(response) { alert(response); },
+            success: function(response) { Lungo.Router.back(); },
             error: function(xhr, type) { alert('ko'); }
         });
 

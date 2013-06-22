@@ -49,7 +49,7 @@ date_default_timezone_set('Europe/Madrid');
             </ul>
         </article>
 
-        <article id="second-article" class="list">
+        <article id="calendar-article" class="list">
             <li class="highlight">
                 <strong>
                     A framework for developers who want to design, build and share cross device apps.
@@ -64,12 +64,12 @@ date_default_timezone_set('Europe/Madrid');
             <ul>
                 <li class="current">
                     <a href="#main-article" data-router="article">
-                        <strong>Main Article</strong>
+                        <strong>Inicio</strong>
                     </a>
                 </li>
                 <li>
-                    <a href="#second-article" data-router="article">
-                        <strong>Second Article</strong>
+                    <a href="#calendar-article" data-router="article">
+                        <strong>Calendario</strong>
                     </a>
                 </li>
             </ul>

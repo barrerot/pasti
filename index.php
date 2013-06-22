@@ -140,6 +140,7 @@ date_default_timezone_set('Europe/Madrid');
 
         LoadDataTratamiento= function() {
         var apiRest, obj,template,html;
+        $$('#tratamiento-list').html("<li class='anchor'>Tomas periódicas</li>");
             apiRest= function() {
                        $$.get(url_tratamiento,{},
                             function(api) {
@@ -160,6 +161,7 @@ date_default_timezone_set('Europe/Madrid');
 
         LoadDataLastTomas= function() {
         var apiRest, obj,template,html;
+        $$('#last_tomas-list').html("<li class='anchor'>Últimas tomas</li>");
             apiRest= function() {
                        $$.get(url_tomas,{last_items:5},
                             function(api) {
@@ -182,6 +184,7 @@ date_default_timezone_set('Europe/Madrid');
 
         LoadDataAllTomas= function(day,month,year) {
         var apiRest, obj,template,html;
+        $$('#items-tomas-day-'+year+month+day).html("");
             apiRest= function() {
                        $$.get(url_tomas,{day:year+"-"+month+"-"+day},
                             function(api) {
@@ -202,13 +205,17 @@ date_default_timezone_set('Europe/Madrid');
                          return {}
         }
 
+        Refrescar = function() {
+            LoadDataTratamiento();
+            LoadDataLastTomas();
+            for (var i = 1; i < 31; i++) {
+                LoadDataAllTomas(i,6,2013)
+            };
+        }
+
         $$('#insertar_button').tap(function(event) { 
  
-        //var url = url_insertarToma;
         var id=$$('#pastilla_select').val();
-        var data = {
-            id: $$('#pastilla_select').val()
-        };
 
         Lungo.Notification.confirm({
             icon: 'user',
@@ -238,11 +245,7 @@ date_default_timezone_set('Europe/Madrid');
 
     });
 
-        LoadDataTratamiento();
-        LoadDataLastTomas();
-        for (var i = 1; i < 31; i++) {
-            LoadDataAllTomas(i,6,2013)
-        };
+        Refrescar();
     </script>
 </body>
 </html>

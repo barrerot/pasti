@@ -219,7 +219,7 @@ date_default_timezone_set('Europe/Madrid');
             data: {pid: id},
             dataType: 'text', //'json', 'xml', 'html', or 'text'
             async: true,
-            success: function(response) { alert(response.text()); },
+            success: function(response) { alert(response); },
             error: function(xhr, type) { alert('ko'); }
         });
 /*

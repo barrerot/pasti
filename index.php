@@ -210,10 +210,13 @@ date_default_timezone_set('Europe/Madrid');
             id: $$('#pastilla_select').val()
         };
 
+        alert('');
+        alert(id);
+/*
         Lungo.Service.post(url, data, function(response) {
             alert(response);
         });
-
+*/
     });
 
         LoadDataTratamiento();

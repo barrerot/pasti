@@ -39,7 +39,7 @@ date_default_timezone_set('Europe/Madrid');
         <article id="main-article" class="active list indented scroll">
             <ul>
                 <li>
-                    <a href="#new-toma-section" data-router="section" class="button anchor">Nueva Toma</a>
+                    <a href="#new-toma" data-router="article" class="button anchor">Nueva Toma</a>
                 </li>
             </ul>
             <ul id="tratamiento-list">
@@ -52,6 +52,27 @@ date_default_timezone_set('Europe/Madrid');
                     Últimas tomas
                 </li>
             </ul>
+        </article>
+
+        <article id="new-toma" class="scroll">
+            <form class="margined">
+
+            <label>Selecciona la pastilla</label>
+            <label class="select">
+                <select id="pastilla_select" class="custom">
+                    <?php
+                        $connection = Database::Connect();
+                        $query = "select pastillaid, nombre from pastilla where pastilla.usuarioid = 4 AND pastilla.enabled = 1";
+                        $cursor = Database::Reader($query, $connection);
+                        while ($row = Database::Read($cursor))
+                        {
+                            echo "<option value='".$row['pastillaid']."'>".$row['nombre']."</option>";
+                        }
+                    ?>
+                </select>
+            </label>
+            <a id="insertar_button" href="#" class="button anchor" data-label="Insertar Toma"></a>
+        </form>        
         </article>
 
         <article id="months-article" class="list indented scroll">
@@ -85,19 +106,6 @@ date_default_timezone_set('Europe/Madrid');
         ?>
     </section>
 
-    <section id="new-toma-section" data-transition="slide">
-        <header>
-            <nav class="left">
-                <a href="#main" data-router="section" class="button" data-icon="home">Atrás</a>
-            </nav>
-            Pastillero
-        </header>
-
-        <article id="new-toma" class="active scroll">
-            hola
-        </article>
-    </section>
-
     <aside id="features">
         <header data-title="Options"></header>
         <article class="active list">
@@ -128,6 +136,7 @@ date_default_timezone_set('Europe/Madrid');
 
         var url_tomas = "http://79.125.5.206/rest/get_tomas.php";
         var url_tratamiento = "http://79.125.5.206/rest/get_tratamiento.php";
+        var url_insertarToma = "http://79.125.5.206/rest/addToma.php";
 
         LoadDataTratamiento= function() {
         var apiRest, obj,template,html;
@@ -192,6 +201,20 @@ date_default_timezone_set('Europe/Madrid');
                          apiRest();
                          return {}
         }
+
+        $$('#insertar_button').tap(function(event) { 
+ 
+        var url = url_insertarToma;
+        var id=$$('#pastilla_select').val();
+        var data = {
+            tomaid: id
+        };
+
+        Lungo.Service.post(url, data, function(response) {
+            alert('okay');
+        });
+
+    });
 
         LoadDataTratamiento();
         LoadDataLastTomas();

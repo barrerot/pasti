@@ -108,6 +108,30 @@ date_default_timezone_set('Europe/Madrid');
         Lungo.init({
             name: 'example'
         });
+
+        var url = "http://pastillas.cbm/rest/get_tomas.php";
+
+        LoadData= function(day,month,year) {
+        var apiRest, obj,template,html;
+            apiRest= function() {
+                       $$.get(url,{day:year+"-"+month+"-"+day},
+                            function(api) {
+                                obj=api;
+                                template="<ul>{{#tomas}}\
+                                             <li id='{{tomaid}}'>\
+                                                <strong>{{pastilla}}</strong>\
+                                                <small>{{time}} hrs.</small>\
+                                            </li>\
+                                             {{/tomas}}</ul>";
+
+                                html=Mustache.render(template,obj);
+                                $$('#items-tomas-day-'+year+month+day).html(html); //Aqui es donde se 'pintaría' los datos que estamos consumiendo en JSON
+                            }
+                            );
+                        }
+                         apiRest();
+                         return {}
+        }  
     </script>
 </body>
 </html>

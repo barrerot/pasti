@@ -97,7 +97,7 @@ date_default_timezone_set('Europe/Madrid');
         <?php
             for($i=1;$i<31;$i++)
             {
-                echo  "<article id=\"items-article-20136$i\" class=\"list indented scroll\"><ul>
+                echo  "<article id=\"items-article-20136$i\" class=\"list scroll\"><ul>
                     <li class=\"anchor\">$i de Junio de 2013</li>
                     <div id=\"items-tomas-day-20136$i\">
                     </div>

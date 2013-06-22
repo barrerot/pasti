@@ -49,22 +49,22 @@ date_default_timezone_set('Europe/Madrid');
             </ul>
         </article>
 
-        <article id="calendar-article" class="list indented scroll">
+        <article id="months-article" class="list indented scroll">
             <ul>
                 <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
+            </ul>
+        </article>
+
+        <article id="days-article" class="list indented scroll">
+            <ul id="days-list">
+                <li class="anchor">Junio de 2013</li>
+            <?php
+                $start=date("d");
+                for($i=$start;$i>=1;$i--)
+                {
+                    echo "<li class=\"arrow\"><a href=\"#items-article-20136$i\" data-router=\"article\"><strong>$i</strong></a></li>";
+                }
+            ?>
             </ul>
         </article>
     </section>
@@ -79,7 +79,7 @@ date_default_timezone_set('Europe/Madrid');
                     </a>
                 </li>
                 <li>
-                    <a href="#calendar-article" data-router="article">
+                    <a href="#months-article" data-router="article">
                         <strong>Calendario</strong>
                     </a>
                 </li>

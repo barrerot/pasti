@@ -110,8 +110,8 @@ date_default_timezone_set('Europe/Madrid');
             name: 'example'
         });
 
-        var url_tomas = "http://pastillas.cbm/rest/get_tomas.php";
-        var url_tratamiento = "http://pastillas.cbm/rest/get_tratamiento.php";
+        var url_tomas = "http://79.125.5.206/rest/get_tomas.php";
+        var url_tratamiento = "http://79.125.5.206/rest/get_tratamiento.php";
 
         LoadDataTratamiento= function() {
         var apiRest, obj,template,html;

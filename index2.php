@@ -41,6 +41,8 @@ date_default_timezone_set('Europe/Madrid');
                 <li class="anchor">
                     Tomas periódicas
                 </li>
+            </ul>
+            <ul>
                 <li class="anchor">
                     Últimas tomas
                 </li>

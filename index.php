@@ -216,10 +216,10 @@ date_default_timezone_set('Europe/Madrid');
         $$.ajax({
             type: 'GET', // defaults to 'GET'
             url: url_insertarToma,
-            data: {id: '2'},
+            data: {id: 'id'},
             dataType: 'text', //'json', 'xml', 'html', or 'text'
             async: true,
-            success: function(response) { alert('ok'); },
+            success: function(response) { alert(response.text()); },
             error: function(xhr, type) { alert('ko'); }
         });
 /*

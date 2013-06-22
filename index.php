@@ -207,11 +207,11 @@ date_default_timezone_set('Europe/Madrid');
         var url = url_insertarToma;
         var id=$$('#pastilla_select').val();
         var data = {
-            tomaid: id
+            id: $$('#pastilla_select').val();
         };
 
         Lungo.Service.post(url, data, function(response) {
-            alert('okay');
+            alert(response);
         });
 
     });

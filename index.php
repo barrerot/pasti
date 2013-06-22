@@ -36,7 +36,7 @@ date_default_timezone_set('Europe/Madrid');
             Pastillero
         </header>
 
-        <article id="main-article" class="active list indented scroll">
+        <article id="main-article" class="active list scroll">
             <ul>
                 <li>
                     <a href="#new-toma" data-router="article" class="button anchor">Nueva Toma</a>
@@ -75,13 +75,13 @@ date_default_timezone_set('Europe/Madrid');
         </form>        
         </article>
 
-        <article id="months-article" class="list indented scroll">
+        <article id="months-article" class="list scroll">
             <ul>
                 <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
             </ul>
         </article>
 
-        <article id="days-article" class="list indented scroll">
+        <article id="days-article" class="list scroll">
             <ul id="days-list">
                 <li class="anchor">Junio de 2013</li>
             <?php

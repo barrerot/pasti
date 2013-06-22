@@ -74,7 +74,7 @@ date_default_timezone_set('Europe/Madrid');
             VanCarPasti
         </header>
 
-        <article id="main-article" class="active list scroll" data-transition="slide">
+        <article id="main-article" class="active list scroll">
             <ul>
                 <li>
                     <a href="#" class="button anchor" onclick="notificationNew()">Nuevo</a>
@@ -99,11 +99,11 @@ date_default_timezone_set('Europe/Madrid');
             </ul>
         </article>
 
-        <article id="mounths-article" class="list indented scroll" data-transition="slide">
+        <article id="mounths-article" class="list indented scroll">
             <li class="arrow"><a href="#days-article" data-router="article"><strong>Junio 2013</strong></a></li>
         </article>
 
-        <article id="days-article" class="list indented scroll" data-transition="slide">
+        <article id="days-article" class="list indented scroll">
             <li class="anchor">Junio de 2013</li>
             <?php
                 $start=date("d");
@@ -118,7 +118,7 @@ date_default_timezone_set('Europe/Madrid');
         <?php
             for($i=1;$i<31;$i++)
             {
-                echo  "<article id=\"items-article-20136$i\" class=\"list indented scroll\" data-transition=\"slide\">
+                echo  "<article id=\"items-article-20136$i\" class=\"list indented scroll\">
                     <li class=\"anchor\">$i de Junio de 2013</li>
                     <div id=\"items-tomas-day-20136$i\">
                     </div>

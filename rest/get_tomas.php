@@ -23,7 +23,7 @@ if(isset($_GET['day']))
 {
 	$from = strtotime($_GET['day']);
 	$to = $from + 86400;
-	$date_condition = " AND toma.`timestamp` > $from AND toma.`timestamp` < $to";
+	$date_condition = " AND toma.`timestamp` > $from AND toma.`timestamp` < $to ORDER BY toma.tomaid DESC";
 }
 
 if(isset($_GET['last_items']))

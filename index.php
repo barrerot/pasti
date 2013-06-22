@@ -210,9 +210,6 @@ date_default_timezone_set('Europe/Madrid');
             id: $$('#pastilla_select').val()
         };
 
-        alert('');
-        alert(id);
-
         $$.ajax({
             type: 'GET', // defaults to 'GET'
             url: url_insertarToma,
@@ -222,11 +219,7 @@ date_default_timezone_set('Europe/Madrid');
             success: function(response) { alert(response); },
             error: function(xhr, type) { alert('ko'); }
         });
-/*
-        Lungo.Service.post(url, data, function(response) {
-            alert(response);
-        });
-*/
+
     });
 
         LoadDataTratamiento();

@@ -1,4 +1,11 @@
 <!doctype html>
+<?php
+include "inc/configuration.php";
+include "inc/class.database.php";
+
+date_default_timezone_set('Europe/Madrid');
+
+?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -26,14 +33,14 @@
             <nav class="left">
                 <a href="#features" data-router="aside" data-icon="menu"></a>
             </nav>
-            <img src="http://cdn.tapquo.com/lungo/logo.png" class="title centered">
-            <nav class="right">
-                <a href="#second" data-router="section" data-icon="share" class="button"></a>
-            </nav>
+            Pastillero
         </header>
 
         <article id="main-article" class="active list indented scroll">
             <ul>
+                <li class="anchor">
+                    Tomas periódicas
+                </li>
                 <li class="dark">
                     <strong>
                         A framework for developers who want to design, build and share cross device apps.

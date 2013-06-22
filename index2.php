@@ -42,33 +42,9 @@ date_default_timezone_set('Europe/Madrid');
                     Tomas periódicas
                 </li>
             </ul>
-            <ul>
+            <ul id="last_tomas-list">
                 <li class="anchor">
                     Últimas tomas
-                </li>
-                <li class="dark">
-                    <strong>
-                        A framework for developers who want to design, build and share cross device apps.
-                    </strong>
-                </li>
-                <li data-icon="brand html5" class="feature">
-                    <strong>HTML5 Optimized Apps</strong>
-                    Lungo Framework supports open web standards, such as HTML5, CSS3 and JavaScript. It brings consistent browser environment across mobiles, tvs and desktop devices.
-                </li>
-                <li data-icon="book" class="feature">
-                    <strong>Powerfull JavaScript API</strong>
-                    Each new line of code in Lungo is welcome, we hope that Developers and restless minds help us to improve day by day this humble project.
-                </li>
-                <li data-icon="brand branch" class="feature">
-                    <strong>Multi-Device full support</strong>
-                    Is known that create apps for each platform is expensive, this situation is increased by the arrival of tablets and SmartTVs. Lungo will suit all of them creating a unique and amazing UX.
-                </li>
-                <li data-icon="brand github-2" class="feature">
-                    <strong>Open Source Project</strong>
-                    Each new line of code in Lungo is welcome, we hope that Developers and restless minds help us to improve day by day this humble project.
-                </li>
-                <li>
-                    <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flungo.tapquo.com%2F&text=@lungojs a framework for developers who want to design, build and share cross device apps" data-icon="brand twitter" target="_blank" class="button anchor theme" data-label="Tweet me"></a>
                 </li>
             </ul>
         </article>
@@ -133,7 +109,30 @@ date_default_timezone_set('Europe/Madrid');
                          return {}
         }  
 
+        LoadDataLastTomas= function() {
+        var apiRest, obj,template,html;
+            apiRest= function() {
+                       $$.get(url_tomas,{last_items:5},
+                            function(api) {
+                                obj=api;
+                                template="{{#tomas}}\
+                                             <li id='{{tomaid}}'>\
+                                                <strong>{{pastilla}}</strong>\
+                                                <small>{{date}} - {{time}} hrs.</small>\
+                                            </li>\
+                                             {{/tomas}}";
+
+                                html=Mustache.render(template,obj);
+                                $$("#last_tomas-list").append(html);
+                            }
+                            );
+                        }
+                         apiRest();
+                         return {}
+        }
+
         LoadDataTratamiento();
+        LoadDataLastTomas();
     </script>
 </body>
 </html>

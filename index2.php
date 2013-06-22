@@ -37,7 +37,7 @@ date_default_timezone_set('Europe/Madrid');
         </header>
 
         <article id="main-article" class="active list indented scroll">
-            <ul>
+            <ul id="tratamiento-list">
                 <li class="anchor">
                     Tomas periódicas
                 </li>
@@ -103,35 +103,37 @@ date_default_timezone_set('Europe/Madrid');
     <!-- Lungo - Dependencies -->
     <script src="components/quojs/quo.js"></script>
     <script src="components/lungo/lungo.js"></script>
+    <script src="components/mustache.js"></script>
     <!-- Lungo - Sandbox App -->
     <script>
         Lungo.init({
             name: 'example'
         });
 
-        var url = "http://pastillas.cbm/rest/get_tomas.php";
+        var url_tomas = "http://pastillas.cbm/rest/get_tomas.php";
+        var url_tratamiento = "http://pastillas.cbm/rest/get_tratamiento.php";
 
-        LoadData= function(day,month,year) {
+        LoadDataTratamiento= function() {
         var apiRest, obj,template,html;
             apiRest= function() {
-                       $$.get(url,{day:year+"-"+month+"-"+day},
+                       $$.get(url_tratamiento,{},
                             function(api) {
                                 obj=api;
-                                template="<ul>{{#tomas}}\
-                                             <li id='{{tomaid}}'>\
-                                                <strong>{{pastilla}}</strong>\
-                                                <small>{{time}} hrs.</small>\
-                                            </li>\
-                                             {{/tomas}}</ul>";
+                                template="{{#pastillas}}\
+                                            <li id='{{pastillaid}}'>\
+                                                <strong>{{nombre}}</strong>\
+                                            </li>\{{/pastillas}}";
 
                                 html=Mustache.render(template,obj);
-                                $$('#items-tomas-day-'+year+month+day).html(html); //Aqui es donde se 'pintaría' los datos que estamos consumiendo en JSON
+                                $$('#tratamiento-list').append(html); //Aqui es donde se 'pintaría' los datos que estamos consumiendo en JSON
                             }
                             );
                         }
                          apiRest();
                          return {}
         }  
+
+        LoadDataTratamiento();
     </script>
 </body>
 </html>

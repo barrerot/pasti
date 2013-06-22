@@ -28,7 +28,7 @@ date_default_timezone_set('Europe/Madrid');
 </head>
 
 <body class="app">
-    <section id="main" data-transition="">
+    <section id="main" data-transition="slide">
         <header>
             <nav class="left">
                 <a href="#features" data-router="aside" data-icon="menu"></a>
@@ -39,7 +39,7 @@ date_default_timezone_set('Europe/Madrid');
         <article id="main-article" class="active list indented scroll">
             <ul>
                 <li>
-                    <a href="#" onclick="alert('jaaaa');" class="button anchor">Nueva Toma</a>
+                    <a href="#new-toma-section" data-router="section" class="button anchor">Nueva Toma</a>
                 </li>
             </ul>
             <ul id="tratamiento-list">
@@ -83,6 +83,19 @@ date_default_timezone_set('Europe/Madrid');
                 </ul></article>";
             }
         ?>
+    </section>
+
+    <section id="new-toma-section" data-transition="slide">
+        <header>
+            <nav class="left">
+                <a href="#main" data-router="section" class="button" data-icon="home">Atrás</a>
+            </nav>
+            Pastillero
+        </header>
+
+        <article id="new-toma" class="active scroll">
+            hola
+        </article>
     </section>
 
     <aside id="features">

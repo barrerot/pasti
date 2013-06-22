@@ -9,7 +9,7 @@ include "../inc/class.toma.php";
 
 date_default_timezone_set('Europe/Madrid');
 
-$pastillaid = $_POST['pastillaid'];
+$pastillaid = $_GET['id'];
 
 $connection = Database::Connect();
 $query = "INSERT INTO  `pastillero`.`toma` (`tomaid`,`timestamp`,`pastillaid`) VALUES (NULL ,  '".time()."',  '".$pastillaid."');";

@@ -38,6 +38,9 @@ date_default_timezone_set('Europe/Madrid');
 
         <article id="main-article" class="active list indented scroll">
             <ul id="tratamiento-list">
+                <li>
+                    <a href="#" onclick="alert('jaaaa');" class="button">Nueva Toma</a>
+                </li>
                 <li class="anchor">
                     Tomas periódicas
                 </li>

@@ -153,8 +153,33 @@ date_default_timezone_set('Europe/Madrid');
                          return {}
         }
 
+        LoadDataAllTomas= function(day,month,year) {
+        var apiRest, obj,template,html;
+            apiRest= function() {
+                       $$.get(url_tomas,{day:year+"-"+month+"-"+day},
+                            function(api) {
+                                obj=api;
+                                template="<ul>{{#tomas}}\
+                                             <li id='{{tomaid}}'>\
+                                                <strong>{{pastilla}}</strong>\
+                                                <small>{{time}} hrs.</small>\
+                                            </li>\
+                                             {{/tomas}}</ul>";
+
+                                html=Mustache.render(template,obj);
+                                $$('#items-tomas-day-'+year+month+day).html(html); //Aqui es donde se 'pintaría' los datos que estamos consumiendo en JSON
+                            }
+                            );
+                        }
+                         apiRest();
+                         return {}
+        }
+
         LoadDataTratamiento();
         LoadDataLastTomas();
+        for (var i = 1; i < 31; i++) {
+            LoadDataAllTomas(i,6,2013)
+        };
     </script>
 </body>
 </html>

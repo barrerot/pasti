@@ -4,7 +4,9 @@ include "inc/configuration.php";
 include "inc/class.database.php";
 
 date_default_timezone_set('Europe/Madrid');
-
+$inicio = 6;
+$final = date("m");
+echo $final;
 ?>
 <html>
 <head>

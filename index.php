@@ -93,7 +93,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 ?>
         <article id="days-article" class="list scroll">
             <ul id="days-list">
-                <li class="dark"><?php echo $meses[$j-1]; ?> de 2013</li>
+                <li class="theme"><?php echo $meses[$j-1]; ?> de 2013</li>
             <?php
                 $start=date("d");
                 for($i=$start;$i>=1;$i--)
@@ -109,7 +109,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             for($i=1;$i<31;$i++)
             {
                 echo  "<article id=\"items-article-2013$j$i\" class=\"list scroll\"><ul>
-                    <li class=\"dark\">$i de ".$meses[$j-1]." de 2013</li>
+                    <li class=\"theme\">$i de ".$meses[$j-1]." de 2013</li>
                     <div id=\"items-tomas-day-2013$j$i\">
                     </div>
                 </ul></article>";

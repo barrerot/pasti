@@ -119,7 +119,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
     </section>
 
     <aside id="features">
-        <header data-title="Options"></header>
+        <header data-title="Opciones"></header>
         <article class="active list">
             <ul>
                 <li class="current">
@@ -234,7 +234,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         var id=$$('#pastilla_select').val();
 
         Lungo.Notification.confirm({
-            icon: 'user',
+            icon: 'warning',
             title: 'Insertar Toma',
             description: 'Hola Vane, ¿estás segura que quieres añadir esta nueva toma?',
             accept: {

@@ -45,12 +45,12 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                 </li>
             </ul>
             <ul id="tratamiento-list">
-                <li class="anchor">
+                <li class="dark">
                     Tomas periódicas
                 </li>
             </ul>
             <ul id="last_tomas-list">
-                <li class="anchor">
+                <li>
                     Últimas tomas
                 </li>
             </ul>

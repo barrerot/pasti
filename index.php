@@ -35,7 +35,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             <nav class="left">
                 <a href="#features" data-router="aside" data-icon="menu"></a>
             </nav>
-            Pastillero
+            <div class="title centered">my pillbox</div>
         </header>
 
         <article id="main-article" class="active list scroll">
@@ -123,12 +123,12 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         <article class="active list">
             <ul>
                 <li class="current">
-                    <a href="#main-article" data-router="article">
+                    <a href="#main-article" data-router="article" data-icon="home">
                         <strong>Inicio</strong>
                     </a>
                 </li>
                 <li>
-                    <a href="#months-article" data-router="article">
+                    <a href="#months-article" data-router="article" data-icon="calendar">
                         <strong>Calendario</strong>
                     </a>
                 </li>
@@ -205,7 +205,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                                 template="<ul>{{#tomas}}\
                                              <li id='{{tomaid}}'>\
                                                 <div class='right'>\
-                                                    <a href='#' class='button small' data-theme='theme.red.css'>Borrar</a>\
+                                                    <a href='#' class='button small' data-theme='theme.red.css' onclick='delete_toma({{tomaid}})'>Borrar</a>\
                                                 </div>\
                                                 <strong>{{pastilla}}</strong>\
                                                 <small>{{time}} hrs.</small>\

@@ -50,7 +50,7 @@ while ($row = Database::Read($cursor))
 }
 $r = array('count' => $i, 'tomas' => $res);
 
-header('Content-Type: application/json');
-echo json_encode($r);
-
+//header('Content-Type: application/json');
+//echo json_encode($r);
+echo $query;
 ?>

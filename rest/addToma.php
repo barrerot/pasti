@@ -12,7 +12,7 @@ $verano = 7200;
 
 $pastillaid = $_GET['pid'];
 
-$hour = time() - $verano;
+$hour = time();
 
 $connection = Database::Connect();
 $query = "INSERT INTO  `pastillero`.`toma` (`tomaid`,`timestamp`,`pastillaid`) VALUES (NULL ,  '".$hour."',  '".$pastillaid."');";

@@ -26,7 +26,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
     <link rel="stylesheet" href="components/lungo/lungo.icon.css">
     <link rel="stylesheet" href="components/lungo/lungo.icon.brand.css">
     <link rel="stylesheet" href="components/lungo/lungo.css">
-    <link rel="stylesheet" href="components/lungo/theme.lungo.css">
+    <link rel="stylesheet" href="components/lungo/theme.red.css">
 </head>
 
 <body class="app">

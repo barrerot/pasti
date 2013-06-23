@@ -15,8 +15,8 @@ $usuario = $usuario->Get(4);
 
 if (isset($_GET['from']) && isset($_GET['to']))
 {
-	$from = strtotime($_GET['from']);
-	$to = strtotime($_GET['to']);
+	$from = strtotime($_GET['from']) - $verano;
+	$to = strtotime($_GET['to']) - $verano;
 	$date_condition = " AND toma.`timestamp` > $from AND toma.`timestamp` < $to";
 }
 

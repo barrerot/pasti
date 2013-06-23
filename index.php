@@ -11,7 +11,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Lungo 2.1 - Example</title>
+    <title>.:: Pastillero ::.</title>
     <meta name="description" content="">
     <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
     <meta name="HandheldFriendly" content="True">

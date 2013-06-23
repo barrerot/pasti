@@ -205,8 +205,8 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                                              <li id='{{tomaid}}'>\
                                                 <strong>{{pastilla}}</strong>\
                                                 <small>{{time}} hrs.</small>\
+                                                <div class='right'><a href='#' class='button small red'>Borrar</a></div>\
                                             </li>\
-                                            <div class='right'><a href='#' class='button small red'>Borrar</a></div>\
                                              {{/tomas}}</ul>";
 
                                 html=Mustache.render(template,obj);

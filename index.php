@@ -152,7 +152,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
         LoadDataTratamiento= function() {
         var apiRest, obj,template,html;
-        $$('#tratamiento-list').html("<li class='anchor theme'>Tomas periódicas</li>");
+        $$('#tratamiento-list').html("<li class='light'>Tomas periódicas</li>");
             apiRest= function() {
                        $$.get(url_tratamiento,{},
                             function(api) {
@@ -174,7 +174,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
         LoadDataLastTomas= function() {
         var apiRest, obj,template,html;
-        $$('#last_tomas-list').html("<li class='theme anchor'>Últimas tomas</li>");
+        $$('#last_tomas-list').html("<li class='light'>Últimas tomas</li>");
             apiRest= function() {
                        $$.get(url_tomas,{last_items:5},
                             function(api) {

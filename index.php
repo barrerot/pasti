@@ -203,9 +203,9 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                                 obj=api;
                                 template="<ul>{{#tomas}}\
                                              <li id='{{tomaid}}'>\
+                                                <div class='right'><a href='#' class='button small red'>Borrar</a></div>\
                                                 <strong>{{pastilla}}</strong>\
                                                 <small>{{time}} hrs.</small>\
-                                                <div class='right'><a href='#' class='button small red'>Borrar</a></div>\
                                             </li>\
                                              {{/tomas}}</ul>";
 

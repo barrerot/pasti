@@ -38,13 +38,13 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             <div class="title centered">my pillbox</div>
         </header>
 
-        <article id="main-article" class="active list">
-            <ul class="four row scroll anchor">
+        <article id="main-article" class="active list scroll">
+            <ul>
                 <li>
                     <a href="#new-toma" data-router="article" class="button">Nueva Toma</a>
                 </li>
             </ul>
-            <ul id="tratamiento-list" class="scroll">
+            <ul id="tratamiento-list">
                 <li class="light">
                     Tomas periódicas
                 </li>

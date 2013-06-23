@@ -82,7 +82,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 ?>
         <article id="months-article" class="list scroll">
             <ul>
-                <li class="dark">2013</li>
+                <li class="light">2013</li>
                 <li class="arrow"><a href="#days-article" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
             </ul>
         </article>

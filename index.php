@@ -149,6 +149,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         var url_tomas = "http://79.125.5.206/rest/get_tomas.php";
         var url_tratamiento = "http://79.125.5.206/rest/get_tratamiento.php";
         var url_insertarToma = "http://79.125.5.206/rest/addToma.php";
+        var url_eliminarToma = "http://79.125.5.206/rest/deleteToma.php";
 
         LoadDataTratamiento= function() {
         var apiRest, obj,template,html;
@@ -262,7 +263,38 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             }
         });
 
-    });
+        });
+
+        delete_toma = function(id) {
+            Lungo.Notification.confirm({
+                icon: 'warning',
+                title: 'Eliminar Toma',
+                description: 'Hola Vane, ¿estás segura que quieres eliminar esta toma?',
+                accept: {
+                    icon: 'checkmark',
+                    label: 'Aceptar',
+                    callback: function(){
+                        $$.ajax({
+                            type: 'GET', // defaults to 'GET'
+                            url: url_eliminarToma,
+                            data: {tomaid: id},
+                            dataType: 'text', //'json', 'xml', 'html', or 'text'
+                            async: true,
+                            success: function(response) { 
+                                Refrescar();
+                                Lungo.Router.article("days-article","months-article"); 
+                            },
+                            error: function(xhr, type) { }
+                        });
+                    }
+                },
+                cancel: {
+                    icon: 'close',
+                    label: 'Cancelar',
+                    callback: function(){ }
+                }
+            });
+        }
 
         Refrescar();
     </script>

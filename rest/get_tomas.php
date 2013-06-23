@@ -8,6 +8,7 @@ include "../inc/class.pastilla.php";
 include "../inc/class.toma.php";
 
 date_default_timezone_set('Europe/Madrid');
+$verano = 7200;
 
 $usuario = new Usuario();
 $usuario = $usuario->Get(4);
@@ -21,8 +22,8 @@ if (isset($_GET['from']) && isset($_GET['to']))
 
 if(isset($_GET['day']))
 {
-	$from = strtotime($_GET['day']);
-	$to = $from + 86400;
+	$from = strtotime($_GET['day']) - $verano;
+	$to = $from + 86400 - $verano;
 	$date_condition = " AND toma.`timestamp` > $from AND toma.`timestamp` < $to ORDER BY toma.tomaid DESC";
 }
 

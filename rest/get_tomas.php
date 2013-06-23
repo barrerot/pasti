@@ -22,8 +22,8 @@ if (isset($_GET['from']) && isset($_GET['to']))
 
 if(isset($_GET['day']))
 {
-	$from = strtotime($_GET['day']) - $verano;
-	$to = $from + 86400 - $verano;
+	$from = strtotime($_GET['day']);
+	$to = $from + 86400;
 	$date_condition = " AND toma.`timestamp` > $from AND toma.`timestamp` < $to ORDER BY toma.tomaid DESC";
 }
 

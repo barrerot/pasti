@@ -282,7 +282,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                             async: true,
                             success: function(response) { 
                                 Refrescar();
-                                Lungo.Router.article("days-article","months-article"); 
+                                //Lungo.Router.article("days-article","months-article"); 
                             },
                             error: function(xhr, type) { }
                         });

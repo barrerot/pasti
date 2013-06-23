@@ -41,7 +41,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         <article id="main-article" class="active list scroll">
             <ul>
                 <li>
-                    <a href="#new-toma" data-router="article" class="button anchor">Nueva Toma</a>
+                    <a href="#new-toma" data-router="article" class="button">Nueva Toma</a>
                 </li>
             </ul>
             <ul id="tratamiento-list">
@@ -151,7 +151,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
         LoadDataTratamiento= function() {
         var apiRest, obj,template,html;
-        $$('#tratamiento-list').html("<li class='cancel'>Tomas periódicas</li>");
+        $$('#tratamiento-list').html("<li class='dark'>Tomas periódicas</li>");
             apiRest= function() {
                        $$.get(url_tratamiento,{},
                             function(api) {
@@ -173,7 +173,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
         LoadDataLastTomas= function() {
         var apiRest, obj,template,html;
-        $$('#last_tomas-list').html("<li class='cancel'>Últimas tomas</li>");
+        $$('#last_tomas-list').html("<li class='dark'>Últimas tomas</li>");
             apiRest= function() {
                        $$.get(url_tomas,{last_items:5},
                             function(api) {

@@ -4,6 +4,7 @@ include "inc/configuration.php";
 include "inc/class.database.php";
 
 date_default_timezone_set('Europe/Madrid');
+
 $inicio = 6;
 $final = date("n");
 $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
@@ -76,26 +77,31 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             <a id="insertar_button" href="#" class="button anchor" data-label="Insertar Toma"></a>
         </form>        
         </article>
-<?php
-    for($j=$inicio;$j<=$final; $j++)
-    {
-?>
         <article id="months-article" class="list scroll">
             <ul>
                 <li class="light">2013</li>
-                <li class="arrow"><a href="#days-article" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
-            </ul>
-        </article>
 <?php
-    }
     for($j=$inicio;$j<=$final; $j++)
     {
 ?>
-        <article id="days-article" class="list scroll">
+                <li class="arrow"><a href="#days-article<?php echo $j ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
+<?php
+    }
+?>
+            </ul>
+        </article>
+<?php
+    for($j=$inicio;$j<=$final; $j++)
+    {
+?>
+        <article id="days-article<?php echo $j ?>" class="list scroll">
             <ul id="days-list">
                 <li class="light"><?php echo $meses[$j-1]; ?> de 2013</li>
             <?php
-                $start=date("d");
+                if($j == date("n"))
+                    $start=date("d");
+                else
+                    $start = date("t", mktime( 0, 0, 0, $j, 1, 2013));
                 for($i=$start;$i>=1;$i--)
                 {
                     echo "<li class=\"arrow\"><a href=\"#items-article-2013$j$i\" data-router=\"article\"><strong>$i</strong></a></li>";
@@ -225,8 +231,11 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         Refrescar = function() {
             LoadDataTratamiento();
             LoadDataLastTomas();
-            for (var i = 1; i < 31; i++) {
+            for (var i = 1; i <= 30; i++) {
                 LoadDataAllTomas(i,6,2013)
+            };
+            for (var i = 1; i <= 31; i++) {
+                LoadDataAllTomas(i,7,2013)
             };
         }
 

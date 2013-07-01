@@ -45,14 +45,14 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                     <a href="#new-toma" data-router="article" class="button">Nueva Toma</a>
                 </li>
             </ul>
-            <ul id="tratamiento-list">
-                <li class="light">
-                    Tomas periódicas
-                </li>
-            </ul>
             <ul id="last_tomas-list">
                 <li class="light">
                     Últimas tomas
+                </li>
+            </ul>
+            <ul id="tratamiento-list">
+                <li class="light">
+                    Tomas periódicas
                 </li>
             </ul>
         </article>
@@ -81,7 +81,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             <ul>
                 <li class="light">2013</li>
 <?php
-    for($j=$inicio;$j<=$final; $j++)
+    for($j=$final;$j>=$inicio; $j--)
     {
 ?>
                 <li class="arrow"><a href="#days-article<?php echo $j ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>

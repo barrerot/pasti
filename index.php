@@ -183,7 +183,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         var apiRest, obj,template,html;
         $$('#last_tomas-list').html("<li class='light'>Últimas tomas</li>");
             apiRest= function() {
-                       $$.get(url_tomas,{last_items:5},
+                       $$.get(url_tomas,{last_items:10},
                             function(api) {
                                 obj=api;
                                 template="{{#tomas}}\

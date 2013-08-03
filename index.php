@@ -85,20 +85,24 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980">
 
             <label>Selecciona la hora</label>
-            <label class="select">
-                <select id="hora_select" class="custom">
-                    <option value="00">00</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                </select>
-                <select id="minutos_select" class="custom">
-                    <option value="00">00</option>
-                    <option value="05">05</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                </select>
-            </label>
+            <fieldset>
+                <label class="select">
+                    <select id="hora_select" class="custom">
+                        <option value="00">00</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                    </select>
+                </label>
+                <label class="select">
+                    <select id="minutos_select" class="custom">
+                        <option value="00">00</option>
+                        <option value="05">05</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                    </select>
+                </label>
+            </fieldset>
             <a id="editar_button" href="#" class="button anchor" data-label="Editar Toma"></a>
         </form>        
         </article>

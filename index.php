@@ -265,7 +265,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                                                     <a href='#' class='button small' data-theme='theme.red.css' onclick='delete_toma({{tomaid}})'>Borrar</a>\
                                                 </div>\
                                                 <div class='right' style='padding-right:5px;'>\
-                                                    <a href='#' class='button small' data-theme='theme.red.css' onclick='editar_toma({{tomaid}})'>Editar</a>\
+                                                    <a href='#' class='button small' data-theme='theme.red.css' onclick='editar_toma({{tomaid}}"+year+month+day+")'>Editar</a>\
                                                 </div>\
                                                 <strong>{{pastilla}}</strong>\
                                                 <small>{{time}} hrs.</small>\
@@ -396,9 +396,11 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             });
         }
 
-        editar_toma = function(id) {
+        editar_toma = function(id,fecha) {
+            alert(id);
+            alert(fecha);
             $$("#edit-toma-id").value(id);
-            Lungo.Router.article("new-toma","edit-toma");
+            Lungo.Router.article("items-tomas-day-"+fecha,"edit-toma");
         }
 
         Refrescar();

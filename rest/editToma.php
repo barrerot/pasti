@@ -21,7 +21,7 @@ $timest = mktime($hora, $minuto, 0, $mes, $dia, $anyo);
 
 $connection = Database::Connect();
 $query = "UPDATE  `pastillero`.`toma` SET  `timestamp` =  '".$timest."' WHERE  `toma`.`tomaid` =".$tomaid.";";
-$cursor = Database::Reader($query, $connection);
+//$cursor = Database::Reader($query, $connection);
 echo $query;
 
 ?>

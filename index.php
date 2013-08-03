@@ -82,6 +82,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             <form class="margined">
 
             <label>Selecciona el día</label>
+            <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980">
             <label class="select">
                 <select id="pastilla_select" class="custom">
                     <?php
@@ -110,7 +111,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                     ?>
                 </select>
             </label>
-            <a id="insertar_button" href="#" class="button anchor" data-label="Editar Toma"></a>
+            <a id="editar_button" href="#" class="button anchor" data-label="Editar Toma"></a>
         </form>        
         </article>
 

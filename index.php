@@ -83,32 +83,20 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
             <label>Selecciona el día</label>
             <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980">
-            <label class="select">
-                <select id="pastilla_select" class="custom">
-                    <?php
-                        $connection = Database::Connect();
-                        $query = "select pastillaid, nombre from pastilla where pastilla.usuarioid = 4 AND pastilla.enabled = 1";
-                        $cursor = Database::Reader($query, $connection);
-                        while ($row = Database::Read($cursor))
-                        {
-                            echo "<option value='".$row['pastillaid']."'>".$row['nombre']."</option>";
-                        }
-                    ?>
-                </select>
-            </label>
 
             <label>Selecciona la hora</label>
             <label class="select">
-                <select id="pastilla_select" class="custom">
-                    <?php
-                        $connection = Database::Connect();
-                        $query = "select pastillaid, nombre from pastilla where pastilla.usuarioid = 4 AND pastilla.enabled = 1";
-                        $cursor = Database::Reader($query, $connection);
-                        while ($row = Database::Read($cursor))
-                        {
-                            echo "<option value='".$row['pastillaid']."'>".$row['nombre']."</option>";
-                        }
-                    ?>
+                <select id="hora_select" class="custom">
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                </select>
+                <select id="minutos_select" class="custom">
+                    <option value="00">00</option>
+                    <option value="05">05</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
                 </select>
             </label>
             <a id="editar_button" href="#" class="button anchor" data-label="Editar Toma"></a>

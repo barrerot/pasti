@@ -213,6 +213,8 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                                              <li id='{{tomaid}}'>\
                                                 <div class='right'>\
                                                     <a href='#' class='button small' data-theme='theme.red.css' onclick='edit_toma({{tomaid}})'>Editar</a>\
+                                                </div>\
+                                                <div class='right'>\
                                                     <a href='#' class='button small' data-theme='theme.red.css' onclick='delete_toma({{tomaid}})'>Borrar</a>\
                                                 </div>\
                                                 <strong>{{pastilla}}</strong>\

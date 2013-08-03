@@ -81,7 +81,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         <article id="edit-toma" class="scroll">
             <form class="margined">
 
-            <input type="text" id="edit-toma-id" value="">
+            <input type="text" id="edit-toma-id" value="00000">
 
             <label>Selecciona el día</label>
             <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980">

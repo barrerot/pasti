@@ -15,7 +15,7 @@ $fecha = $_GET['tomafecha'];
 $hora = $_GET['tomahora'];
 $minuto = $_GET['tomaminutos'];
 
-list($dia, $mes, $anyo) = split('[/.-]', $fecha);
+list($anyo, $mes, $dia) = split('[/.-]', $fecha);
 
 $timest = mktime($hora, $minuto, 0, $mes, $dia, $anyo);
 

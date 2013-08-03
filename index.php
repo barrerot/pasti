@@ -14,7 +14,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
     <meta charset="utf-8">
     <title>.:: Pastillero ::.</title>
     <meta name="description" content="">
-    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <meta name="author" content="Carlos Barrero Martinez">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -84,7 +84,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
     for($j=$final;$j>=$inicio; $j--)
     {
 ?>
-                <li class="arrow"><a href="#days-article<?php echo $j ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
+                <li class="arrow"><a href="#days-article<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
 <?php
     }
 ?>
@@ -236,6 +236,9 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             };
             for (var i = 1; i <= 31; i++) {
                 LoadDataAllTomas(i,7,2013)
+            };
+            for (var i = 1; i <= 31; i++) {
+                LoadDataAllTomas(i,8,2013)
             };
         }
 

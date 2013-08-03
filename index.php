@@ -212,10 +212,10 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                                 template="<ul>{{#tomas}}\
                                              <li id='{{tomaid}}'>\
                                                 <div class='right'>\
-                                                    <a href='#' class='button small' data-theme='theme.red.css' onclick='edit_toma({{tomaid}})'>Editar</a>\
-                                                </div>\
-                                                <div class='right'>\
                                                     <a href='#' class='button small' data-theme='theme.red.css' onclick='delete_toma({{tomaid}})'>Borrar</a>\
+                                                </div>\
+                                                <div class='right' style='padding-right:5px;'>\
+                                                    <a href='#' class='button small' data-theme='theme.red.css' onclick='edit_toma({{tomaid}})'>Editar</a>\
                                                 </div>\
                                                 <strong>{{pastilla}}</strong>\
                                                 <small>{{time}} hrs.</small>\

@@ -77,6 +77,45 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             <a id="insertar_button" href="#" class="button anchor" data-label="Insertar Toma"></a>
         </form>        
         </article>
+
+        <article id="edit-toma" class="scroll">
+            <form class="margined">
+
+            <label>Selecciona el día</label>
+            <label class="select">
+                <select id="pastilla_select" class="custom">
+                    <?php
+                        $connection = Database::Connect();
+                        $query = "select pastillaid, nombre from pastilla where pastilla.usuarioid = 4 AND pastilla.enabled = 1";
+                        $cursor = Database::Reader($query, $connection);
+                        while ($row = Database::Read($cursor))
+                        {
+                            echo "<option value='".$row['pastillaid']."'>".$row['nombre']."</option>";
+                        }
+                    ?>
+                </select>
+            </label>
+
+            <label>Selecciona la hora</label>
+            <label class="select">
+                <select id="pastilla_select" class="custom">
+                    <?php
+                        $connection = Database::Connect();
+                        $query = "select pastillaid, nombre from pastilla where pastilla.usuarioid = 4 AND pastilla.enabled = 1";
+                        $cursor = Database::Reader($query, $connection);
+                        while ($row = Database::Read($cursor))
+                        {
+                            echo "<option value='".$row['pastillaid']."'>".$row['nombre']."</option>";
+                        }
+                    ?>
+                </select>
+            </label>
+            <a id="insertar_button" href="#" class="button anchor" data-label="Editar Toma"></a>
+        </form>        
+        </article>
+
+
+
         <article id="months-article" class="list scroll">
             <ul>
                 <li class="light">2013</li>
@@ -215,7 +254,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                                                     <a href='#' class='button small' data-theme='theme.red.css' onclick='delete_toma({{tomaid}})'>Borrar</a>\
                                                 </div>\
                                                 <div class='right' style='padding-right:5px;'>\
-                                                    <a href='#' class='button small' data-theme='theme.red.css' onclick='edit_toma({{tomaid}})'>Editar</a>\
+                                                    <a href='#edit-toma' class='button small' data-theme='theme.red.css' data-router='article'>Editar</a>\
                                                 </div>\
                                                 <strong>{{pastilla}}</strong>\
                                                 <small>{{time}} hrs.</small>\

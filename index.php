@@ -265,7 +265,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                                                     <a href='#' class='button small' data-theme='theme.red.css' onclick='delete_toma({{tomaid}})'>Borrar</a>\
                                                 </div>\
                                                 <div class='right' style='padding-right:5px;'>\
-                                                    <a href='#edit-toma' class='button small' data-theme='theme.red.css' data-router='article'>Editar</a>\
+                                                    <a href='#' class='button small' data-theme='theme.red.css' onclick='editar_toma({{tomaid}})'>Editar</a>\
                                                 </div>\
                                                 <strong>{{pastilla}}</strong>\
                                                 <small>{{time}} hrs.</small>\

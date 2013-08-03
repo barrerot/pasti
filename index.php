@@ -237,7 +237,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             for (var i = 1; i <= 31; i++) {
                 LoadDataAllTomas(i,7,2013)
             };
-            for (var i = 1; i <= 31; i++) {
+            for (var i = 1; i <= 30; i++) {
                 LoadDataAllTomas(i,8,2013)
             };
         }

@@ -399,7 +399,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         editar_toma = function(id,fecha) {
             alert(id);
             alert(fecha);
-            $$("#edit-toma-id").val(id);
+            $("#edit-toma-id").val(id);
             Lungo.Router.article("items-tomas-day-"+fecha,"edit-toma");
         }
 

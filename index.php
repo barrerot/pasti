@@ -84,7 +84,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             <input type="text" name="edit-toma-id" id="edit-toma-id" value="00000" style="display:none;">
 
             <label>Selecciona el día</label>
-            <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980">
+            <input id="fecha_select" type="date" class="align_right" placeholder="Select finish" value="10/04/1980">
 
             <label>Selecciona la hora</label>
                 <label class="select">
@@ -332,7 +332,10 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
         $$('#editar_button').tap(function(event) { 
  
-        var id=$$('#pastilla_select').val();
+        var tid=$$("#edit-toma-id").val();
+        var fecha=$$("#fecha_select").val();
+        var hora=$$("#hora_select").val();
+        var minutos=$$("#minutos_select").val();
 
         Lungo.Notification.confirm({
             icon: 'warning',
@@ -345,7 +348,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                     $$.ajax({
                         type: 'GET', // defaults to 'GET'
                         url: url_editarToma,
-                        data: {pid: id},
+                        data: {tomaid: tid, tomafecha: fecha, tomahora: hora, tomaminutos: minutos},
                         dataType: 'text', //'json', 'xml', 'html', or 'text'
                         async: true,
                         success: function(response) { 

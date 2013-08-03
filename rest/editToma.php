@@ -10,15 +10,17 @@ include "../inc/class.toma.php";
 date_default_timezone_set('Europe/Madrid');
 $verano = 7200;
 
-$tomaid = $_GET['tid'];
-$fecha = $_GET['fecha'];
-$hora = $_GET['hora'];
-$minuto = $_GET['minuto'];
+$tomaid = $_GET['tomaid'];
+$fecha = $_GET['tomafecha'];
+$hora = $_GET['tomahora'];
+$minuto = $_GET['tomaminutos'];
 
-$hour = time();
+list($dia, $mes, $anyo) = split('[/.-]', $fecha);
+
+$timest = mktime($hora, $minuto, 0, $mes, $dia, $anyo);
 
 $connection = Database::Connect();
-$query = "INSERT INTO  `pastillero`.`toma` (`tomaid`,`timestamp`,`pastillaid`) VALUES (NULL ,  '".$hour."',  '".$pastillaid."');";
+$query = "UPDATE  `pastillero`.`toma` SET  `timestamp` =  '".$timest."' WHERE  `toma`.`tomaid` =".$tomaid.";"
 $cursor = Database::Reader($query, $connection);
 echo $query;
 

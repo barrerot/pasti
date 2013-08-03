@@ -81,6 +81,8 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         <article id="edit-toma" class="scroll">
             <form class="margined">
 
+            <input id="edit-toma-id" value="">
+
             <label>Selecciona el día</label>
             <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980">
 
@@ -202,6 +204,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         var url_tomas = "http://79.125.5.206/rest/get_tomas.php";
         var url_tratamiento = "http://79.125.5.206/rest/get_tratamiento.php";
         var url_insertarToma = "http://79.125.5.206/rest/addToma.php";
+        var url_editarToma = "http://79.125.5.206/rest/editToma.php";
         var url_eliminarToma = "http://79.125.5.206/rest/deleteToma.php";
 
         LoadDataTratamiento= function() {
@@ -327,6 +330,41 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
         });
 
+        $$('#editar_button').tap(function(event) { 
+ 
+        var id=$$('#pastilla_select').val();
+
+        Lungo.Notification.confirm({
+            icon: 'warning',
+            title: 'Editar Toma',
+            description: 'Hola Vane, ¿estás segura que quieres editar esta toma?',
+            accept: {
+                icon: 'checkmark',
+                label: 'Aceptar',
+                callback: function(){
+                    $$.ajax({
+                        type: 'GET', // defaults to 'GET'
+                        url: url_editarToma,
+                        data: {pid: id},
+                        dataType: 'text', //'json', 'xml', 'html', or 'text'
+                        async: true,
+                        success: function(response) { 
+                            Refrescar();
+                            Lungo.Router.article("edit-toma","months-article"); 
+                        },
+                        error: function(xhr, type) { }
+                    });
+                }
+            },
+            cancel: {
+                icon: 'close',
+                label: 'Cancelar',
+                callback: function(){ }
+            }
+        });
+
+        });
+
         delete_toma = function(id) {
             Lungo.Notification.confirm({
                 icon: 'warning',
@@ -356,6 +394,11 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                     callback: function(){ }
                 }
             });
+        }
+
+        editar_toma = function(id) {
+            $$.("#edit-toma-id").value(id);
+            Lungo.Router.article("new-toma","edit-toma");
         }
 
         Refrescar();

@@ -81,7 +81,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         <article id="edit-toma" class="scroll">
             <form class="margined">
 
-            <input id="edit-toma-id" value="">
+            <input type="text" id="edit-toma-id" value="">
 
             <label>Selecciona el día</label>
             <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980">
@@ -399,7 +399,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         editar_toma = function(id,fecha) {
             alert(id);
             alert(fecha);
-            $("#edit-toma-id").val(id);
+            $$("#edit-toma-id").val(id);
             Lungo.Router.article("items-tomas-day-"+fecha,"edit-toma");
         }
 

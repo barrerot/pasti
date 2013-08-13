@@ -13,7 +13,7 @@ $usuario = new Usuario();
 $usuario = $usuario->Get(4);
 
 $connection = Database::Connect();
-$query = "select pastillaid, nombre from pastilla where pastilla.usuarioid = 4 AND pastilla.enabled = 1 ORDER BY  `pastilla`.`nombre` DESC";
+$query = "select pastillaid, nombre from pastilla where pastilla.usuarioid = 4 AND pastilla.enabled = 1 ORDER BY  `pastilla`.`nombre` ASC";
 $cursor = Database::Reader($query, $connection);
 $i = 0;
 while ($row = Database::Read($cursor))

@@ -14,6 +14,6 @@ $tomaid = $_GET['tomaid'];
 $connection = Database::Connect();
 $query = "DELETE FROM toma WHERE toma.tomaid=".$tomaid;
 $cursor = Database::Reader($query, $connection);
-echo $query;
+echo $cursor;
 
 ?>

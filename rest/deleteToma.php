@@ -19,5 +19,4 @@ if($cursor == 1)
 	echo "Toma nueva apuntada."
 else
 	echo "No se ha podido realizar la nueva toma."
-
 ?>

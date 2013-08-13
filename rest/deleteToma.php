@@ -16,7 +16,7 @@ $query = "DELETE FROM toma WHERE toma.tomaid=".$tomaid;
 $cursor = Database::Reader($query, $connection);
 
 if($cursor == 1)
-	echo "Toma nueva apuntada."
+	echo "Toma nueva apuntada";
 else
-	echo "No se ha podido realizar la nueva toma."
+	echo "No se ha podido realizar la nueva toma";
 ?>

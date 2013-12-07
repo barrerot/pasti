@@ -313,6 +313,9 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             for (var i = 1; i <= 30; i++) {
                 LoadDataAllTomas(i,11,2013)
             };
+            for (var i = 1; i <= 31; i++) {
+                LoadDataAllTomas(i,12,2013)
+            };
         }
 
         $$('#insertar_button').tap(function(event) { 

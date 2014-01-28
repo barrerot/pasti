@@ -7,6 +7,8 @@ date_default_timezone_set('Europe/Madrid');
 
 $inicio = 6;
 $final = date("n");
+$anyoInicial = 2013;
+$anyoFinal = 2014;
 $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 ?>
 <html>
@@ -59,102 +61,110 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
         <article id="new-toma" class="scroll">
             <form class="margined">
-
-            <label>Selecciona la pastilla</label>
-            <label class="select">
-                <select id="pastilla_select" class="custom">
-                    <?php
-                        $connection = Database::Connect();
-                        $query = "select pastillaid, nombre from pastilla where pastilla.usuarioid = 4 AND pastilla.enabled = 1";
-                        $cursor = Database::Reader($query, $connection);
-                        while ($row = Database::Read($cursor))
-                        {
-                            echo "<option value='".$row['pastillaid']."'>".$row['nombre']."</option>";
-                        }
-                    ?>
-                </select>
-            </label>
+                <label>Selecciona la pastilla</label>
+                <label class="select">
+                    <select id="pastilla_select" class="custom">
+                        <?php
+                            $connection = Database::Connect();
+                            $query = "select pastillaid, nombre from pastilla where pastilla.usuarioid = 4 AND pastilla.enabled = 1";
+                            $cursor = Database::Reader($query, $connection);
+                            while ($row = Database::Read($cursor))
+                            {
+                                echo "<option value='".$row['pastillaid']."'>".$row['nombre']."</option>";
+                            }
+                        ?>
+                    </select>
+                </label>
             <a id="insertar_button" href="#" class="button anchor" data-label="Insertar Toma"></a>
-        </form>        
+            </form>        
         </article>
 
         <article id="edit-toma" class="scroll">
             <form class="margined">
 
-            <input type="text" name="edit-toma-id" id="edit-toma-id" value="00000" style="display:none;">
+                <input type="text" name="edit-toma-id" id="edit-toma-id" value="00000" style="display:none;">
 
-            <label>Selecciona el día</label>
-            <input id="fecha_select" type="date" class="align_right" placeholder="Select finish" value="10/04/1980">
+                <label>Selecciona el día</label>
+                <input id="fecha_select" type="date" class="align_right" placeholder="Select finish" value="10/04/1980">
 
-            <label>Selecciona la hora</label>
-                <label class="select">
-                    <select id="hora_select" class="custom">
-                        <option value="00">00</option>
-                        <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                        <option value="04">04</option>
-                        <option value="05">05</option>
-                        <option value="06">06</option>
-                        <option value="07">07</option>
-                        <option value="08">08</option>
-                        <option value="09">09</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
-                        <option value="22">22</option>
-                        <option value="23">23</option>
-                    </select>
-                </label>
-                <label class="select">
-                    <select id="minutos_select" class="custom">
-                        <option value="00">00</option>
-                        <option value="05">05</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="20">20</option>
-                        <option value="25">25</option>
-                        <option value="30">30</option>
-                        <option value="35">35</option>
-                        <option value="40">40</option>
-                        <option value="45">45</option>
-                        <option value="50">50</option>
-                        <option value="55">55</option>
-                    </select>
-                </label>
-            <a id="editar_button" href="#" class="button anchor" data-label="Editar Toma"></a>
-        </form>        
+                <label>Selecciona la hora</label>
+                    <label class="select">
+                        <select id="hora_select" class="custom">
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                        </select>
+                    </label>
+                    <label class="select">
+                        <select id="minutos_select" class="custom">
+                            <option value="00">00</option>
+                            <option value="05">05</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                            <option value="35">35</option>
+                            <option value="40">40</option>
+                            <option value="45">45</option>
+                            <option value="50">50</option>
+                            <option value="55">55</option>
+                        </select>
+                    </label>
+                <a id="editar_button" href="#" class="button anchor" data-label="Editar Toma"></a>
+            </form>        
         </article>
-
 
 
         <article id="months-article" class="list scroll">
             <ul>
-                <li class="light">2013</li>
-<?php
-    for($j=$final;$j>=$inicio; $j--)
-    {
-?>
-                <li class="arrow"><a href="#days-article<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
-<?php
-    }
-?>
+                <li class="light">2014</li>
+            <?php
+                for($j=$final;$j>=1; $j--)
+                {
+            ?>
+                    <li class="arrow"><a href="#days-article2014-<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2014</strong></a></li>
+            <?php
+                }
+            ?>
+            <li class="light">2013</li>
+            <?php
+                for($j=12;$j>=6; $j--)
+                {
+            ?>
+                    <li class="arrow"><a href="#days-article2013-<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
+            <?php
+                }
+            ?>
             </ul>
         </article>
-<?php
-    for($j=$inicio;$j<=$final; $j++)
-    {
-?>
-        <article id="days-article<?php echo $j; ?>" class="list scroll">
+
+        <?php
+        for($j=6;$j<=12; $j++)
+        {
+        ?>
+        <article id="days-article2013-<?php echo $j; ?>" class="list scroll">
             <ul id="days-list">
                 <li class="light"><?php echo $meses[$j-1]; ?> de 2013</li>
             <?php
@@ -180,8 +190,43 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                     </div>
                 </ul></article>";
             }
-    }
+        }
         ?>
+
+        <?php
+        for($j=1;$j<=$final; $j++)
+        {
+        ?>
+        <article id="days-article2014-<?php echo $j; ?>" class="list scroll">
+            <ul id="days-list">
+                <li class="light"><?php echo $meses[$j-1]; ?> de 2014</li>
+            <?php
+                if($j == date("n"))
+                    $start=date("j");
+                else
+                    $start = date("t", mktime( 0, 0, 0, $j, 1, 2014));
+                for($i=$start;$i>=1;$i--)
+                {
+                    echo "<li class=\"arrow\"><a href=\"#items-article-2014$j$i\" data-router=\"article\"><strong>$i</strong></a></li>";
+                }
+            ?>
+            </ul>
+        </article>
+
+        <?php
+
+            for($i=1;$i<=$start;$i++)
+            {
+                echo  "<article id=\"items-article-2014$j$i\" class=\"list scroll\"><ul>
+                    <li class=\"light\">$i de ".$meses[$j-1]." de 2014</li>
+                    <div id=\"items-tomas-day-2014$j$i\">
+                    </div>
+                </ul></article>";
+            }
+        }
+        ?>
+
+
     </section>
 
     <aside id="features">
@@ -315,6 +360,9 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             };
             for (var i = 1; i <= 31; i++) {
                 LoadDataAllTomas(i,12,2013)
+            };
+            for (var i = 1; i <= 31; i++) {
+                LoadDataAllTomas(i,1,2014)
             };
         }
 

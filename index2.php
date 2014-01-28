@@ -139,19 +139,23 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
         <article id="months-article" class="list scroll">
             <ul>
+                <li class="light">2014</li>
             <?php
-            for($p=$anyoFinal;$p>=$anyoInicial;$p--)
-            {
-            ?>
-                <li class="light"><?php echo $p; ?></li>
-            <?php
-                for($j=$final;$j>=$inicio; $j--)
+                for($j=$final;$j>=1; $j--)
                 {
             ?>
-                            <li class="arrow"><a href="#days-article<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]." ".$p; ?></strong></a></li>
+                    <li class="arrow"><a href="#days-article<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2014</strong></a></li>
             <?php
                 }
-            }
+            ?>
+            <li class="light">2013</li>
+            <?php
+                for($j=12;$j>=6; $j--)
+                {
+            ?>
+                    <li class="arrow"><a href="#days-article<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
+            <?php
+                }
             ?>
             </ul>
         </article>

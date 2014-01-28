@@ -137,7 +137,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         </article>
 
 <?php
-for($p=$anyoFinal;$p<=$anyoInicial;$p--)
+for($p=$anyoFinal;$p>=$anyoInicial;$p--)
 {
 ?>
         <article id="months-article" class="list scroll">

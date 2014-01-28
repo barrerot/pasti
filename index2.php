@@ -142,7 +142,7 @@ for($p=$anyoFinal;$p>=$anyoInicial;$p--)
 ?>
         <article id="months-article" class="list scroll">
             <ul>
-                <li class="light">$p</li>
+                <li class="light"><?php echo $p; ?></li>
             <?php
                 for($j=$final;$j>=$inicio; $j--)
                 {

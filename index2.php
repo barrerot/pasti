@@ -144,7 +144,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                 for($j=$final;$j>=1; $j--)
                 {
             ?>
-                    <li class="arrow"><a href="#days-article<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2014</strong></a></li>
+                    <li class="arrow"><a href="#days-article2014-<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2014</strong></a></li>
             <?php
                 }
             ?>
@@ -153,7 +153,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                 for($j=12;$j>=6; $j--)
                 {
             ?>
-                    <li class="arrow"><a href="#days-article<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
+                    <li class="arrow"><a href="#days-article2013-<?php echo $j; ?>" data-router="article"><strong><?php echo $meses[$j-1]; ?> 2013</strong></a></li>
             <?php
                 }
             ?>
@@ -161,10 +161,10 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
         </article>
 
         <?php
-        for($j=$inicio;$j<=$final; $j++)
+        for($j=6;$j<=12; $j++)
         {
         ?>
-        <article id="days-article<?php echo $j; ?>" class="list scroll">
+        <article id="days-article2013<?php echo $j; ?>" class="list scroll">
             <ul id="days-list">
                 <li class="light"><?php echo $meses[$j-1]; ?> de 2013</li>
             <?php
@@ -192,6 +192,41 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             }
         }
         ?>
+
+        <?php
+        for($j=1;$j<=$final; $j++)
+        {
+        ?>
+        <article id="days-article2014<?php echo $j; ?>" class="list scroll">
+            <ul id="days-list">
+                <li class="light"><?php echo $meses[$j-1]; ?> de 2014</li>
+            <?php
+                if($j == date("n"))
+                    $start=date("j");
+                else
+                    $start = date("t", mktime( 0, 0, 0, $j, 1, 2014));
+                for($i=$start;$i>=1;$i--)
+                {
+                    echo "<li class=\"arrow\"><a href=\"#items-article-2014$j$i\" data-router=\"article\"><strong>$i</strong></a></li>";
+                }
+            ?>
+            </ul>
+        </article>
+
+        <?php
+
+            for($i=1;$i<=$start;$i++)
+            {
+                echo  "<article id=\"items-article-2014$j$i\" class=\"list scroll\"><ul>
+                    <li class=\"light\">$i de ".$meses[$j-1]." de 2014</li>
+                    <div id=\"items-tomas-day-2014$j$i\">
+                    </div>
+                </ul></article>";
+            }
+        }
+        ?>
+
+
     </section>
 
     <aside id="features">
@@ -325,6 +360,9 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             };
             for (var i = 1; i <= 31; i++) {
                 LoadDataAllTomas(i,12,2013)
+            };
+            for (var i = 1; i <= 31; i++) {
+                LoadDataAllTomas(i,1,2014)
             };
         }
 

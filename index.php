@@ -364,6 +364,27 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             for (var i = 1; i <= 31; i++) {
                 LoadDataAllTomas(i,1,2014)
             };
+            for (var i = 1; i <= 28; i++) {
+                LoadDataAllTomas(i,2,2014)
+            };
+            for (var i = 1; i <= 31; i++) {
+                LoadDataAllTomas(i,3,2014)
+            };
+            for (var i = 1; i <= 30; i++) {
+                LoadDataAllTomas(i,4,2014)
+            };
+            for (var i = 1; i <= 31; i++) {
+                LoadDataAllTomas(i,5,2014)
+            };
+            for (var i = 1; i <= 30; i++) {
+                LoadDataAllTomas(i,6,2014)
+            };
+            for (var i = 1; i <= 31; i++) {
+                LoadDataAllTomas(i,7,2014)
+            };
+            for (var i = 1; i <= 31; i++) {
+                LoadDataAllTomas(i,8,2014)
+            };
         }
 
         $$('#insertar_button').tap(function(event) {

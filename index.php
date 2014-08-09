@@ -76,7 +76,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                     </select>
                 </label>
             <a id="insertar_button" href="#" class="button anchor" data-label="Insertar Toma"></a>
-            </form>        
+            </form>
         </article>
 
         <article id="edit-toma" class="scroll">
@@ -133,7 +133,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                         </select>
                     </label>
                 <a id="editar_button" href="#" class="button anchor" data-label="Editar Toma"></a>
-            </form>        
+            </form>
         </article>
 
 
@@ -257,11 +257,11 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             name: 'example'
         });
 
-        var url_tomas = "http://79.125.5.206/rest/get_tomas.php";
-        var url_tratamiento = "http://79.125.5.206/rest/get_tratamiento.php";
-        var url_insertarToma = "http://79.125.5.206/rest/addToma.php";
-        var url_editarToma = "http://79.125.5.206/rest/editToma.php";
-        var url_eliminarToma = "http://79.125.5.206/rest/deleteToma.php";
+        var url_tomas = "http://80.240.140.210/rest/get_tomas.php";
+        var url_tratamiento = "http://80.240.140.210/rest/get_tratamiento.php";
+        var url_insertarToma = "http://80.240.140.210/rest/addToma.php";
+        var url_editarToma = "http://80.240.140.210/rest/editToma.php";
+        var url_eliminarToma = "http://80.240.140.210/rest/deleteToma.php";
 
         LoadDataTratamiento= function() {
         var apiRest, obj,template,html;
@@ -283,7 +283,7 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                         }
                          apiRest();
                          return {}
-        }  
+        }
 
         LoadDataLastTomas= function() {
         var apiRest, obj,template,html;
@@ -366,8 +366,8 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
             };
         }
 
-        $$('#insertar_button').tap(function(event) { 
- 
+        $$('#insertar_button').tap(function(event) {
+
         var id=$$('#pastilla_select').val();
 
         Lungo.Notification.confirm({
@@ -384,9 +384,9 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                         data: {pid: id},
                         dataType: 'text', //'json', 'xml', 'html', or 'text'
                         async: true,
-                        success: function(response) { 
+                        success: function(response) {
                             Refrescar();
-                            Lungo.Router.article("new-toma","main-article"); 
+                            Lungo.Router.article("new-toma","main-article");
                         },
                         error: function(xhr, type) { }
                     });
@@ -401,8 +401,8 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
 
         });
 
-        $$('#editar_button').tap(function(event) { 
- 
+        $$('#editar_button').tap(function(event) {
+
         var tid=$$("#edit-toma-id").val();
         var fecha=$$("#fecha_select").val();
         var hora=$$("#hora_select").val();
@@ -422,9 +422,9 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                         data: {tomaid: tid, tomafecha: fecha, tomahora: hora, tomaminutos: minutos},
                         dataType: 'text', //'json', 'xml', 'html', or 'text'
                         async: true,
-                        success: function(response) { 
+                        success: function(response) {
                             Refrescar();
-                            Lungo.Router.article("edit-toma","months-article"); 
+                            Lungo.Router.article("edit-toma","months-article");
                         },
                         error: function(xhr, type) { }
                     });
@@ -454,9 +454,9 @@ $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "
                             data: {tomaid: id},
                             dataType: 'text', //'json', 'xml', 'html', or 'text'
                             async: true,
-                            success: function(response) { 
+                            success: function(response) {
                                 Refrescar();
-                                //Lungo.Router.article("days-article","months-article"); 
+                                //Lungo.Router.article("days-article","months-article");
                             },
                             error: function(xhr, type) { }
                         });
